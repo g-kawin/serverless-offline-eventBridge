@@ -267,7 +267,8 @@ export default class ServerlessOfflineAwsEventbridgePlugin {
   async createLambda(lambdas) {
     // https://github.com/import-js/eslint-plugin-import/issues/2495
     // eslint-disable-next-line import/no-unresolved
-    const { default: Lambda } = await import("serverless-offline/lambda");
+//     const { default: Lambda } = await import("serverless-offline/lambda");
+    const { default: Lambda } = require("serverless-offline/dist/lambda")
     this.lambda = new Lambda(this.serverless, this.options);
     this.lambda.create(lambdas);
   }
